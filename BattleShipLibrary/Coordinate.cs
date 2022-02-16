@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace BattleShipLibrary
-{
+{   //
     public struct Coordinate
     {
         public Coordinate(int x, int y)
