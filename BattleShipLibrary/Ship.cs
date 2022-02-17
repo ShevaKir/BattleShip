@@ -48,6 +48,7 @@ namespace BattleShipLibrary
 
         public Coordinate LastDeck => _decks.Last().Key;
 
+        public IEnumerable<Coordinate> GetCoordinatesShip => _decks.Keys.AsEnumerable();
 
         public int CountDamageDeck 
         { 

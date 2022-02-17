@@ -7,7 +7,7 @@ namespace BattleShipLibrary
 {
     class GridShip
     {
-        private List<Coordinate> _grid;
+        private ISet<Coordinate> _grid;
         private int _height = 3;            //высота грида
         private int _weight = 3;            //ширина грида
 
@@ -24,6 +24,7 @@ namespace BattleShipLibrary
                     _height += ship.CountDeck - 1;
                 }
             }
+            _grid = new HashSet<Coordinate>(_height*_weight);
             FillGrid(ship);
         }
 
@@ -38,5 +39,9 @@ namespace BattleShipLibrary
             }
         }
         
+        public IEnumerable<Coordinate> GetGridAroundShip(IEnumerable<Coordinate> coordinatesShip)
+        {
+            return _grid.Except(coordinatesShip);
+        }
     }
 }
